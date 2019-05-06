@@ -95,15 +95,19 @@ Once you have updated the file, send the configuration to the LDAP server.
 --> run this command : ldapmodify -Y EXTERNAL  -H ldapi:/// -f monitor.ldif
 
 Set up LDAP database
+
 Copy the sample database configuration file to /var/lib/ldap and update the file permissions.
 
 run this command : cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+
 run this command : chown ldap:ldap /var/lib/ldap/*
 
 Add the cosine and nis LDAP schemas.
 
 --> run this : ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif
+
 --> also this : ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif 
+
 --> and this : ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif
 
 Next, Generate base.ldif file for your domain.
