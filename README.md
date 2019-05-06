@@ -117,90 +117,157 @@ vi base.ldif
 Use the below information. You can modify it according to your requirement.
 
 dn: dc=mycluster,dc=icp
+
 dc: mycluster
+
 objectClass: top
+
 objectClass: domain
 
 dn: ou=people,dc=mycluster,dc=icp
+
 objectClass: organizationalUnit
+
 description: All people in organization
+
 ou: people
 
 dn: ou=groups,dc=mycluster,dc=icp
+
 objectClass: organizationalUnit
+
 objectClass: top
+
 ou: groups
 
 dn: uid=auser01,ou=people,dc=mycluster,dc=icp
+
 objectClass: inetOrgPerson
+
 objectClass: organizationalPerson
+
 objectClass: person
+
 objectClass: top
+
 cn: auser01
+
 sn: auser01
+
 uid: auser01
+
 userPassword: auser01
 
 dn: uid=auser02,ou=people,dc=mycluster,dc=icp
+
 objectClass: inetOrgPerson
+
 objectClass: organizationalPerson
+
 objectClass: person
+
 objectClass: top
+
 cn: auser02
+
 sn: auser02
+
 uid: auser02
+
 userPassword: auser02
 
 dn: uid=auser03,ou=people,dc=mycluster,dc=icp
+
 objectClass: inetOrgPerson
+
 objectClass: organizationalPerson
+
 objectClass: person
+
 objectClass: top
+
 cn: auser03
+
 sn: auser03
+
 uid: auser03
+
 userPassword: auser03
 
 dn: uid=auser04,ou=people,dc=mycluster,dc=icp
+
 objectClass: inetOrgPerson
+
 objectClass: organizationalPerson
+
 objectClass: person
+
 objectClass: top
+
 cn: auser04
+
 sn: auser04
+
 uid: auser04
+
 userPassword: auser04
 
 dn: uid=auser05,ou=people,dc=mycluster,dc=icp
+
 objectClass: inetOrgPerson
+
 objectClass: organizationalPerson
+
 objectClass: person
+
 objectClass: top
+
 cn: auser05
+
 sn: auser05
+
 uid: auser05
+
 userPassword: auser05
 
 dn: uid=auser06,ou=people,dc=mycluster,dc=icp
+
 objectClass: inetOrgPerson
+
 objectClass: organizationalPerson
+
 objectClass: person
+
 objectClass: top
+
 cn: auser06
+
 sn: auser06
+
 uid: auser06
+
 userPassword: auser06
 
 dn: cn=clusteradmin,ou=groups,dc=mycluster,dc=icp
+
 objectClass: groupOfUniqueNames
+
 objectClass: top
+
 cn: clusteradmin
+
 uniquemember: uid=auser01,ou=people,dc=mycluster,dc=icp
+
 uniquemember: uid=auser02,ou=people,dc=mycluster,dc=icp
+
 uniquemember: uid=auser03,ou=people,dc=mycluster,dc=icp
+
 uniquemember: uid=auser04,ou=people,dc=mycluster,dc=icp
+
 uniquemember: uid=auser05,ou=people,dc=mycluster,dc=icp
+
 uniquemember: uid=auser06,ou=people,dc=mycluster,dc=icp
+
 Build the directory structure.
 
 --> run this command : ldapadd -x -W -D "cn=ldapadm,dc=itzgeek,dc=local" -f base.ldif
@@ -210,7 +277,7 @@ Output:
 
 Enter LDAP Password: 
 
-adding new entry "dc=itzgeek,dc=local"
+adding new entry "dc=mycluster,dc=icp"
 
 adding new entry "cn=ldapadm ,dc=mycluster,dc=icp"
 
