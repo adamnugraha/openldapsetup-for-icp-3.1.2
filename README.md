@@ -1,4 +1,4 @@
-# openldapsetup-for-icp-3.1.2
+# OPENLDAP SETUP ON CENTOS 7
 
 Prerequisites :
 1. Make sure LDAP server are accessible
