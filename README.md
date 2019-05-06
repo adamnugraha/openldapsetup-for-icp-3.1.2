@@ -14,6 +14,7 @@ yum -y install openldap compat-openldap openldap-clients openldap-servers openld
 Start the LDAP service and enable it for the auto start of service on system boot
 
 --> systemctl start slapd
+
 --> systemctl enable slapd
 
 Verify the LDAP
@@ -28,7 +29,7 @@ tcp6       0      0 :::389                  :::*                    LISTEN      
 Setup LDAP admin password
 Run below command to create an LDAP root password. We will use this for LDAP admin (root) passwor
 
-Replace ldppassword with your password.
+Put in with your password.
 
 --> slappasswd -h {SSHA} -s (yourpassword)
 
@@ -38,7 +39,9 @@ Output:
 
 {SSHA}d/thexcQUuSfe3rx3gRaEhHpNJ52N8D3
 
+
 Configure OpenLDAP server
+
 OpenLDAP servers configuration files are found in /etc/openldap/slapd.d/. To start with the configuration of LDAP, we would need to update the variables “olcSuffix” and “olcRootDN“.
 
 olcSuffix – Database Suffix, it is the domain name for which the LDAP server provides the information. In simple words, it should be changed to your domain
@@ -72,6 +75,7 @@ dn: olcDatabase={2}hdb,cn=config
 changetype: modify
 replace: olcRootPW
 olcRootPW: {SSHA}d/thexcQUuSfe3rx3gRaEhHpNJ52N8D3
+
 Once you are done with the ldif file, send the configuration to the LDAP server.
 
 --> run this command : ldapmodify -Y EXTERNAL  -H ldapi:/// -f db.ldif
