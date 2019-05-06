@@ -270,7 +270,7 @@ uniquemember: uid=auser06,ou=people,dc=mycluster,dc=icp
 
 Build the directory structure.
 
---> run this command : ldapadd -x -W -D "cn=ldapadm,dc=itzgeek,dc=local" -f base.ldif
+--> run this command : ldapadd -x -W -D "cn=ldapadm,dc=mycluster,dc=icp" -f base.ldif
 
 The ldapadd command will prompt you for the password of ldapadm (LDAP root user).
 Output:
